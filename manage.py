@@ -1,7 +1,7 @@
 import subprocess
 
 from flask.cli import FlaskGroup
-
+ 
 from antminermonitor import system_check
 from antminermonitor.app import create_app
 from antminermonitor.blueprints.asicminer.models.miner import Miner
