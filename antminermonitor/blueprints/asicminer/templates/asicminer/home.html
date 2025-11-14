@@ -1,0 +1,179 @@
+{% extends 'layouts/base.html' %}
+
+{% block meta_description %}
+Antminer Monitor, antminer, monitor, antmon, bitmain, bitcoin, litecoin, dash,
+cryptocurrency, crypto, miner, mine, mining
+{% endblock %}
+{% block title %}Antminer Monitor {{ version }}{% endblock %}
+
+{% block body %}
+<h2>Antminer Monitor {{ version }}</h2>
+<fieldset style="width: 300px;">
+<legend>Countdown</legend>
+<b id="countdown"></b>
+</fieldset>
+
+<div class="container">
+    <div>
+      <fieldset name="add">
+          <legend>Add Miner</legend>
+          <form action="{{ url_for('antminer.add_miner') }}" method="POST">
+              <div class="addminer_container">
+                  <div>
+                      <label for="ip">IP Address: </label>
+                  </div>
+                  <div>
+                      <input required type="text" name="ip" pattern="^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$" title="Please add a valid IP address (eg. xxx.xxx.xxx.xxx)" placeholder="xxx.xxx.xxx.xxx">
+                  </div>
+                  <div>
+                      <label for="model_id">Model: </label>
+                  </div>
+                  <div>
+                      <select required name="model_id">
+                          <option disabled selected value> -- select an option --</option>
+                          {%- for id, model in models.items() %}
+                              <option value="{{ id }}">{{ model.get('description') }}</option>
+                          {%- endfor %}
+                      </select>
+                  </div>
+                  <div>
+                      <label for="remarks">Remarks: </label>
+                  </div>
+                  <div>
+                      <input type="text" name="remarks">
+                  </div>
+                  <p><input type="submit" value="Add model"></p>
+              </div>
+          </form>
+      </fieldset>
+    </div>
+    <div>
+        <fieldset name="miner_discovery">
+            <legend>Miner Discovery</legend>
+            <form action="{{ url_for('antminer.miner_discovery') }}" method="POST">
+                <div class="minerdiscovery_container">
+                    <div>
+                        <label for="subnet">Subnet: </label>
+                    </div>
+                    <div>
+                        <input required type="text" name="subnet" pattern="^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){2}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$" title="Please add a valid network subnet (eg. xxx.xxx.xxx)" placeholder="xxx.xxx.xxx">
+                    </div>
+                    <div>
+                        <label for="start_ip">Start IP: </label>
+                    </div>
+                    <div>
+                        <input required type="number" name="start_ip" min="1" max="255" title="Accepted value: 1-255">
+                    </div>
+                    <div>
+                        <label for="end_ip">End IP: </label>
+                    </div>
+                    <div>
+                        <input required type="number" name="end_ip"  min="1" max="255" title="Accepted value: 1-255">
+                    </div>
+                    <p><input type="submit" value="Discover"></p>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+    <div></div>
+    <div>
+        <fieldset name="total_hashrate" style="height:130px">
+            <legend>Total hashrate per model (5s)</legend>
+            <ul>
+                {%- for model in total_hash_rate_per_model|sort %}
+                    <li><u>{{ model }}:</u> <strong>{{ total_hash_rate_per_model[model] }}</strong>
+                    </li>
+                {%- endfor %}
+            </ul>
+        </fieldset>
+    </div>
+</div>
+<br>
+
+{%- with messages = get_flashed_messages(with_categories=true) %}
+    {%- if messages %}
+        {%- for category, message in messages %}
+            <div class="{{ category }}">
+                <strong>{{ message }}</strong>
+            </div>
+        {%- endfor %}
+    {%- endif %}
+{%- endwith %}
+<br>
+
+{%- if inactive_miners %}
+    <fieldset name="inactive_miner_list">
+        <legend>In-active Miners ({{ inactive_miners|length }})</legend>
+        <table style="width:100%">
+            <tr>
+                <th>IP Address</th>
+                <th>Model</th>
+                <th>Remarks</th>
+                <th>Status</th>
+                <th>Remove</th>
+            </tr>
+            {%- for inactive_miner in inactive_miners|sort(attribute='ip') %}
+                <tr>
+                    <td><a target="_blank" href="http://{{ inactive_miner.ip }}/cgi-bin/minerStatus.cgi">{{ inactive_miner.ip }}</a></td>
+                    <td>{{ inactive_miner.model_id }}</td>
+                    <td>{{ inactive_miner.remarks }}</td>
+                    <!-- <td>Error: Check connection or IP Address</td> -->
+                    <td>{{ inactive_miner.errors }}</td>
+                    <td><a href={{ url_for('antminer.delete_miner', id=inactive_miner.id) }} style="text-decoration:none">&#10060;</a></td>
+                </tr>
+            {%- endfor %}
+        </table>
+    </fieldset>
+{%- endif %}
+<br>
+
+<fieldset name="active_miner_list">
+    <legend>Active Miners ({{ active_miners|length }})</legend>
+    <table style="width:100%">
+        <tr>
+            <th>IP Address</th>
+            <th>Worker</th>
+            <th>Model</th>
+            <th>Remarks</th>
+            <th title="'O' means OK">Chips (Os)</th>
+            <th title="'X' means defective">Chips (Xs)</th>
+            <th title="'-' means instability of the power supply voltage or the defective hash board">Chips (-)</th>
+            <th>Chip Temp(C)</th>
+            <th>Fan speeds (rpm)</th>
+            <th>Hashrate (5s)</th>
+            <th>HW Error Rate %</th>
+            <th>Uptime</th>
+            <th>Status</th>
+            <!--<th>JSON Info</th>-->
+            <th>Remove</th>
+        </tr>
+        {%- for active_miner in active_miners|sort(attribute='ip') %}
+            <tr {%- if active_miner.errors %} class="error"{%- endif %}>
+                <td><a target="_blank" href="http://{{ active_miner.ip }}/cgi-bin/minerStatus.cgi">{{ active_miner.ip }}</a></td>
+                <td>{{ active_miner.worker }}</td>
+                <td title="{{ models.get(active_miner.model_id).get('description') }}">{{ active_miner.model_id }}</td>
+                <td>{{ active_miner.remarks }}</td>
+                <td>{{ active_miner.chips['Os'] }}</td>
+                <td>{{ active_miner.chips['Xs'] }}</td>
+                <td>{{ active_miner.chips['-'] }}</td>
+                <td>{{ active_miner.temperatures }}</td>
+                <td>{{ active_miner.fan_speeds }}</td>
+                <td>{{ active_miner.normalized_hash_rate }}</td>
+                <td>{{ active_miner.hw_error_rate }}</td>
+                <td>{{ active_miner.uptime }}</td>
+                <td title="{%- if active_miner.errors %}{{ active_miner.errors }}{%- else %}OK{%- endif %}">
+                    {%- if active_miner.errors %}Check your miner{%- else %}OK{%- endif %}</td>
+                <!--<td><a target="_blank" href="/{{ active_miner.ip }}/summary">Summary</a> |
+                    <a target="_blank" href="/{{ active_miner.ip }}/pools">Pools</a> |
+                    <a target="_blank" href="/{{ active_miner.ip }}/stats">Stats</a></td>-->
+                <td><a href={{ url_for('antminer.delete_miner', id=active_miner.id) }} style="text-decoration:none">&#10060;</a></td>
+            </tr>
+        {%- endfor %}
+    </table>
+</fieldset>
+{% endblock %}
+
+{% block tail_js -%}
+{{ super() -}}
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+{% endblock -%}

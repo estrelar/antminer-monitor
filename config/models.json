@@ -1,0 +1,212 @@
+{
+    "Antminer A3": {
+        "id": "Antminer A3",
+        "model": "A3",
+        "chips": "60,60,60",
+        "temp_keys": "temp2_",
+        "unit": "GH/s",
+        "description": "Bitmain Antminer A3 Siacoin Miner 815 GH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer B3": {
+        "id": "Antminer B3",
+        "model": "B3",
+        "chips": "2,2,2,2,2,2",
+        "temp_keys": "temp2_",
+        "unit": "H/s",
+        "description": "Bitmain Antminer B3 Tensority Miner 780 H/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer D3": {
+        "id": "Antminer D3",
+        "model": "D3",
+        "chips": "60,60,60",
+        "temp_keys": "temp2_",
+        "unit": "MH/s",
+        "description": "Bitmain Antminer D3 DASH Miner 17 GH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer E3": {
+        "id": "Antminer E3",
+        "model": "E3",
+        "chips": "2,2,2,2,2,2,2,2,2",
+        "temp_keys": "temp2_",
+        "unit": "MH/s",
+        "description": "Bitmain Antminer E3 Ethash Miner 190 MH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer L3": {
+        "id": "Antminer L3",
+        "model": "L3",
+        "chips": "36,36,36,36",
+        "temp_keys": "temp2_",
+        "unit": "MH/s",
+        "description": "Bitmain Antminer L3 Litecoin Miner 250 MH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer L3+": {
+        "id": "Antminer L3+",
+        "model": "L3+",
+        "chips": "72,72,72,72",
+        "temp_keys": "temp2_",
+        "unit": "MH/s",
+        "description": "Bitmain Antminer L3+ Litecoin Miner 504 MH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer L3++": {
+        "id": "Antminer L3++",
+        "model": "L3++",
+        "chips": "72,72,72,72",
+        "temp_keys": "temp2_",
+        "unit": "MH/s",
+        "description": "Bitmain Antminer L3++ Litecoin Miner 580 MH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer R4": {
+        "id": "Antminer R4",
+        "model": "R4",
+        "chips": "63,63",
+        "temp_keys": "temp2_",
+        "unit": "TH/s",
+        "description": "Bitmain Antminer R4 Bitcoin Miner 8 TH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer S7": {
+        "id": "Antminer S7",
+        "model": "S7",
+        "chips": "45,45,45",
+        "temp_keys": "temp",
+        "unit": "GH/s",
+        "description": "Bitmain Antminer S7 Bitcoin Miner 4.5 TH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer S9": {
+        "id": "Antminer S9",
+        "model": "S9",
+        "chips": "63,63,63",
+        "temp_keys": "temp2_",
+        "unit": "GH/s",
+        "description": "Bitmain Antminer S9 Bitcoin Miner 13.5 TH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer S11": {
+        "id": "Antminer S11",
+        "model": "S11",
+        "chips": "84,84,84",
+        "temp_keys": "temp2_",
+        "unit": "GH/s",
+        "description": "Bitmain Antminer S11 Bitcoin Miner 19.5 TH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer S17": {
+        "id": "Antminer S17",
+        "model": "S17",
+        "chips": "48,48,48",
+        "temp_keys": "temp2_",
+        "unit": "GH/s",
+        "description": "Bitmain Antminer S17 Bitcoin Miner 56 TH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer S17 Pro": {
+        "id": "Antminer S17 Pro",
+        "model": "S17Pro",
+        "chips": "48,48,48",
+        "temp_keys": "temp2_",
+        "unit": "GH/s",
+        "description": "Bitmain Antminer S17 Pro Bitcoin Miner 53 TH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer S17+": {
+        "id": "Antminer S17+",
+        "model": "S17+",
+        "chips": "65,65,65",
+        "temp_keys": "temp2_",
+        "unit": "GH/s",
+        "description": "Bitmain Antminer S17+ Bitcoin Miner 67 TH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer T9": {
+        "id": "Antminer T9",
+        "model": "T9",
+        "chips": "57,57,57",
+        "temp_keys": "temp2_",
+        "unit": "GH/s",
+        "description": "Bitmain Antminer T9 Bitcoin Miner 12.5 TH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer T9+": {
+        "id": "Antminer T9+",
+        "model": "T9+",
+        "chips": "54,54,54",
+        "temp_keys": "temp2_",
+        "unit": "GH/s",
+        "description": "Bitmain Antminer T9+ Bitcoin Miner 10.5 TH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer T17": {
+        "id": "Antminer T17",
+        "model": "T17",
+        "chips": "30,30,30",
+        "temp_keys": "temp2_",
+        "unit": "GH/s",
+        "description": "Bitmain Antminer T17 Bitcoin Miner 40 TH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer V9": {
+        "id": "Antminer V9",
+        "model": "V9",
+        "chips": "45,45,45",
+        "temp_keys": "temp2_",
+        "unit": "GH/s",
+        "description": "Bitmain Antminer V9 Bitcoin Miner 4 TH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer X3": {
+        "id": "Antminer X3",
+        "model": "X3",
+        "chips": "60,60,60",
+        "temp_keys": "temp2_",
+        "unit": "KH/s",
+        "description": "Bitmain Antminer X3 CryptoNight Miner 220 KH/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer Z9mini": {
+        "id": "Antminer Z9mini",
+        "model": "Z9 mini",
+        "chips": "4,4,4",
+        "temp_keys": "temp2_",
+        "unit": "KSol/s",
+        "description": "Bitmain Antminer Z9 mini Equihash Miner 10 KSol/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    },
+    "Antminer Z11": {
+        "id": "Antminer Z11",
+        "model": "Z11",
+        "chips": "3,3,3",
+        "temp_keys": "temp2_",
+        "unit": "KSol/s",
+        "description": "Bitmain Antminer Z11 Equihash Miner 135 KSol/s",
+        "model_module": "antminermonitor.blueprints.asicminer.asic_antminer",
+        "model_classname": "ASIC_ANTMINER"
+    }
+}
