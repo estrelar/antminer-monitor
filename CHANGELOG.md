@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [v0.5.0] - 2018-10-01
+## [v0.5.0] - 2018-10-01 
 
 ### Bug fixes
 - :wrench: config(hashrate): Fix Hashrate for Antminer T9. Closes #109
