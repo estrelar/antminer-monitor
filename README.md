@@ -1,6 +1,6 @@
 # Antminer Monitor [![follow on twitter][twitter]](https://twitter.com/intent/follow?screen_name=AntminerMonitor)
 
-A lightweight Python-based monitoring solution for Antminer ASIC devices.
+A lightweight Python-based monitoring solution for Antminer ASIC devices. 
 
 Lite Python based Antminer Monitor !!!
 
@@ -141,3 +141,4 @@ systemctl enable antminermonitor
 [ledger]: https://www.ledgerwallet.com/images/promo/nano-s/ledger_nano-s_7-2-8x9-0.jpg
 [bitradio]: https://bitrad.io/images/BRO728x90.gif
 [presearch]: https://www.presearch.org/images/rf/ban-4.jpg
+
