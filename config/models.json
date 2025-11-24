@@ -2,7 +2,7 @@
     "Antminer A3": {
         "id": "Antminer A3",
         "model": "A3",
-        "chips": "60,60,60", 
+        "chips": "60,60,60",
         "temp_keys": "temp2_",
         "unit": "GH/s",
         "description": "Bitmain Antminer A3 Siacoin Miner 815 GH/s",
@@ -210,4 +210,3 @@
         "model_classname": "ASIC_ANTMINER"
     }
 }
-

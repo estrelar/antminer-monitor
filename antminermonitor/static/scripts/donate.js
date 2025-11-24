@@ -4,7 +4,7 @@ CoinWidgetCom.go({
     wallet_address: "1HYCBovF6mqqKMyG4m2DQxXpdKmogK4Wuw"
 
     , currency: "bitcoin"
-    , counter: "hide" 
+    , counter: "hide"
     , alignment: "br"
     , qrcode: true
     , auto_show: false

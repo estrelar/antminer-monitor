@@ -6,7 +6,7 @@ def update_unit_and_value(value, unit):
     while value > 1024:
         value = value / 1024.0
         if unit == 'MH/s':
-            unit = 'GH/s' 
+            unit = 'GH/s'
         elif unit == 'GH/s':
             unit = 'TH/s'
         elif unit == 'TH/s':

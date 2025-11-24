@@ -3,7 +3,7 @@ Description=Gunicorn instance to serve AntminerMonitor
 After=network.target
 
 [Service]
-User=pi 
+User=pi
 Group=pi
 WorkingDirectory=/home/pi/antminer-monitor
 Environment="PATH=/home/pi/antminer-monitor/env/bin"
