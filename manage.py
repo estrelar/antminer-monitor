@@ -1,5 +1,5 @@
 import subprocess
-from antminermonitor import system_check
+from antminermonitor import system_check 
 from antminermonitor.app import create_app
 from antminermonitor.blueprints.asicminer.models.miner import Miner
 from antminermonitor.blueprints.asicminer.models.settings import Settings
