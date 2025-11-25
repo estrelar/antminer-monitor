@@ -6,7 +6,7 @@
 
 ### Bug fixes
 - :wrench: config(hashrate): Fix Hashrate for Antminer T9. Closes #109
-- :wrench: config(hashrate): Fix Hashrate Unit for Antminer V9. Closes #90 
+- :wrench: config(hashrate): Fix Hashrate Unit for Antminer V9. Closes #90
 - :bug: fix(migrate): Add db parameter when initializing Flask-Migrate
 - :bug: fix(view): Fix line continuation. Closes #112
 - :bug: fix(view): Fix Interface always shows 1st pool worker. Closes #118

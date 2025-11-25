@@ -1,13 +1,12 @@
-import subprocess 
-
-from flask.cli import FlaskGroup
-
+import subprocess
 from antminermonitor import system_check
 from antminermonitor.app import create_app
 from antminermonitor.blueprints.asicminer.models.miner import Miner
 from antminermonitor.blueprints.asicminer.models.settings import Settings
 from antminermonitor.blueprints.user.models import User
 from antminermonitor.database import db_session, init_db
+
+from flask.cli import FlaskGroup
 
 cli = FlaskGroup(create_app=create_app)
 
