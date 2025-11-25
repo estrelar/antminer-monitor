@@ -1,4 +1,4 @@
-# app requirements
+# app requirements 
 Flask==1.1.1
 Flask-Login==0.5.0
 Flask-Migrate==2.5.2
